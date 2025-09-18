@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "Employee API",
+    "description": "Collection for Employee Management API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/employee",
+          "host": ["{{baseUrl}}"],
+          "path": ["employee"]
+        }
+      }
+    },
+    {
+      "name": "Get Employee by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/employee/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["employee", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Employee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Smith\",\n  \"address\": \"123 Main Street, New York, NY\",\n  \"salary\": 75000\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/employee",
+          "host": ["{{baseUrl}}"],
+          "path": ["employee"]
+        }
+      }
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Smith Updated\",\n  \"address\": \"456 Oak Avenue, Los Angeles, CA\",\n  \"salary\": 85000\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/employee/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["employee", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/employee/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["employee", "1"]
+        }
+      }
+    }
+  ]
+}

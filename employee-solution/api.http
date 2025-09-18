@@ -1,0 +1,32 @@
+### Variables
+@baseUrl = http://localhost:5000/api
+@contentType = application/json
+
+### Get all employees
+GET {{baseUrl}}/employee
+
+### Get employee by ID
+GET {{baseUrl}}/employee/1
+
+### Create new employee
+POST {{baseUrl}}/employee
+Content-Type: {{contentType}}
+
+{
+  "name": "John Smith",
+  "address": "123 Main Street, New York, NY",
+  "salary": 75000
+}
+
+### Update employee
+PUT {{baseUrl}}/employee/1
+Content-Type: {{contentType}}
+
+{
+  "name": "John Smith Updated",
+  "address": "456 Oak Avenue, Los Angeles, CA",
+  "salary": 85000
+}
+
+### Delete employee
+DELETE {{baseUrl}}/employee/1
